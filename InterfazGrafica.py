@@ -60,7 +60,7 @@ class InterfazGrafica:
     def iniciar_algoritmo(self):
         """Inicia el algoritmo genético con la imagen seleccionada por el usuario."""
         try:
-            self.ag = AlgoritmoGenetico(self.ruta_imagen, tamano_poblacion=50, generaciones=300, tasa_mutacion=0.1)
+            self.ag = AlgoritmoGenetico(self.ruta_imagen, tamano_poblacion=50, generaciones=500, tasa_mutacion=0.1)
         except Exception as e:
             messagebox.showerror("Error", str(e))
             return
@@ -92,8 +92,4 @@ class InterfazGrafica:
             self.generacion_actual += 1
             self.root.after(100, self.evolucionar)
 
-# Ejecutar la interfaz gráfica
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = InterfazGrafica(root)
-    root.mainloop()
+
